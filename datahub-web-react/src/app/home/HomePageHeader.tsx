@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useHistory } from 'react-router';
-import { Typography, Image, Row, Button, Tag } from 'antd';
+import { Typography, Row, Button, Tag } from 'antd';
 import styled, { useTheme } from 'styled-components';
 
 import { ManageAccount } from '../shared/ManageAccount';
@@ -33,9 +33,8 @@ const WelcomeText = styled(Typography.Text)`
 const styles = {
     navBar: { padding: '24px' },
     searchContainer: { width: '100%', marginTop: '40px' },
-    logoImage: { width: 140 },
     searchBox: { width: '40vw', minWidth: 400, margin: '40px 0px', marginBottom: '12px' },
-    subtitle: { marginTop: '28px', color: '#FFFFFF', fontSize: 12 },
+    subtitle: { marginTop: '28px', color: '#009688', fontSize: 30, fontWeight: 600 },
 };
 
 const HeaderContainer = styled.div`
@@ -218,10 +217,7 @@ export const HomePageHeader = () => {
                 </NavGroup>
             </Row>
             <HeaderContainer>
-                <Image src={themeConfig.assets.logoUrl} preview={false} style={styles.logoImage} />
-                {!!themeConfig.content.subtitle && (
-                    <Typography.Text style={styles.subtitle}>{themeConfig.content.subtitle}</Typography.Text>
-                )}
+                <Typography.Text style={styles.subtitle}>{themeConfig.content.subtitle}</Typography.Text>
                 <SearchBarContainer>
                     <SearchBar
                         placeholderText={themeConfig.content.search.searchbarMessage}
